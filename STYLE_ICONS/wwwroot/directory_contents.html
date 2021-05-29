@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>STYLE ICONS</title>
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/stylecommon.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body onload="getCurrentUser()">
+    <div class="top">
+        <a href="index.html">
+            <p class="brand">
+                <img class="brand" src="img/brand.png" />
+            </p>
+        </a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="navbar-nav mr-auto">
+                    <div class="n nav-item">
+                        <a class="nav-link" href="index.html">Главная</a>
+                    </div>
+                    <div class="n nav-item dropdown">
+                        <a class=" nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Каталог
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li id="catalogsget"></li>
+                            <li class="catalogadd"></li>
+                        </ul>
+                    </div>
+                    <div class="n nav-item">
+                        <a class="nav-link" href="index.html">Информация</a>
+                    </div>
+                </div>
+                <div class="navbar-nav mr-auto">
+                    <div class="n nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Личный кабинет
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li class="log"></li>
+                        </ul>
+                    </div>
+                    <div class="n nav-item">
+                        <a onclick="getBasket()" class="nav-link">Корзина</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <section>
+        <div id="namecatalog"></div>
+        <div id="productsget">
+        </div>
+    </section>
+    <div class="modal fade bd-example-modal-sm" id="EditCatalog" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content p-3 mb-2  text-white">
+                <div class="modal-header text-center">
+                    <h5 class="modal-title  w-100"> Редактирование каталога</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="catalogedit">Название каталога:</label>
+                            <input id="cataloginput" class="form-control" type="text" placeholder="Название" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer  text-center ">
+                    <button id="catalogsave" type="button" class="btn w-100 text-white">Сохранить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="mRegister" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content text-white">
+                <div class="modal-header text-center">
+                    <h3 class="modal-title w-100">Регистрация</h3>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div id="msg"></div>
+                        <ul id="formError"></ul>
+                        <div class="form-group">
+                            <label for="fnameginput">Имя:</label>
+                            <input id="fnameginput" class="form-control" type="text" placeholder="Введите имя" required>
+                            <label for="lnameginput">Фамилия:</label>
+                            <input id="lnameginput" class="form-control" type="text" placeholder="Введите фамилию" required>
+                            <label for="mnameginput">Отчество:</label>
+                            <input id="mnameginput" class="form-control" type="text" placeholder="Введите отчество(необязательно)" required>
+                            <label for="pnumberinput">Номер телефона:</label>
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">+7</div>
+                                </div>
+                                <input id="pnumberinput" type="text" class="form-control" placeholder="(999)666-66-66">
+                            </div>
+                            <label for="emailinput">Email:</label>
+                            <input id="emailinput" class="form-control" type="text" placeholder="Введите Email(необязательно)" required>
+                            <label for="passinput">Пароль:</label>
+                            <input id="passinput" class="form-control" type="text" placeholder="Введите пароль" required>
+                            <label for="passcinput">Подтверждение пароля:</label>
+                            <input id="passcinput" class="form-control" type="text" placeholder="Введите пароль ещё раз" required><br>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer text-center text-white">
+                    <button id="registerBtn" type="button" class="btn w-100  text-white">Зарегистрироваться</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="mLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content text-white">
+                <div class="modal-header text-center">
+                    <h3 class="modal-title w-100">Вход в личный кабинет</h3>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div id="msg2"></div>
+                        <ul id="formError2"></ul>
+                        <div class="form-group">
+                            <label for="loginput">Логин:</label>
+                            <input id="loginput" class="form-control" type="text" placeholder="Введите номер телефона или email" required>
+                            <label for="logpassinput">Пароль:</label>
+                            <input id="logpassinput" class="form-control" type="text" placeholder="Введите пароль" required>
+                            <input type="checkbox" class="custom-checkbox" id="remembermech" name="happy" value="yes">
+                            <label for="remembermech">Запомнить меня</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer text-center">
+                    <button id="loginBtn" type="button" class="btn w-100  text-white">Войти</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bd-example-modal-sm" id="mNotification" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content text-white">
+                <div class="modal-header text-center">
+                    <h3 class="modal-title w-100">Уведомление</h3>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group text-center">
+                            <div id="msg3"></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer text-center">
+                    <button id="NotificationClose" type="button" data-dismiss="modal" class="btn w-100  text-white">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="mProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content text-white">
+                <div class="modal-header text-center">
+                    <h3 id="mprod" class="modal-title w-100"></h3>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="fnameproduct">Название товара:</label>
+                            <input id="fnameproduct" class="form-control" type="text" placeholder="Введите название товара" required>
+                            <label for="fimgproduct">Изображение товара:</label>
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">/img</div>
+                                </div>
+                                <input id="fimgproduct" class="form-control" type="text" placeholder="Введите стоимость" required>
+                            </div>
+                            <label for="lpriceproduct">Стоимость:</label>
+                            <input id="lpriceproduct" class="form-control" type="text" placeholder="Введите стоимость" required>
+                            <label for="mqproduct">Количество на складе:</label>
+                            <input id="mqproduct" class="form-control" type="text" placeholder="Введите количество" required>
+                        </div>
+                    </form>
+                </div>
+                <div id="mbp" class="modal-footer text-center text-white">
+                    <!--<button id="crp" onclick="createProduct()" type="button" class="btn w-100  text-white">Добавить</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="mBasket" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content text-white">
+                <div class="modal-header text-center">
+                    <h3 id="mprod" class="modal-title w-100"></h3>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <div id="addbasket"> </div>
+                        </div>
+                    </form>
+                </div>
+                <div id="mbp" class="modal-footer text-center text-white">
+                    <button id="NotificationClose" type="button" data-dismiss="modal" class="btn w-100  text-white">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/product_script.js"></script>
+    <script src="js/directory_script.js"></script>
+    <script src="js/basket_script.js"></script>
+    <script src="js/user_script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

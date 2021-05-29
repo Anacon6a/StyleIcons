@@ -1,0 +1,187 @@
+
+body {
+	background-repeat: no-repeat;
+	background: linear-gradient(to left, #000000, #330000);
+}
+p.brand {
+	text-align: center;
+}
+	 p.brand:hover {
+		background-color: rgba(91,0,9,0.3);
+		border: none;
+	}
+img.brand {
+	height: 200px;
+}
+
+.top {
+	background-color: black;
+}
+nav.navbar  {
+	margin: -20px 0 0 0;
+	background: linear-gradient(to right, #ffbd00, #977102 80% ) !important;
+	height: 75px;
+	/*font-family: "AmaticSC" !important;
+	font-size: 28px;
+	color:black;*/
+}
+.n {
+	font-family: "AmaticSC" !important;
+	font-size: 28px !important;
+	color: black !important;
+	opacity: 1 !important;
+}
+	a.n:hover {
+		color: rgba(91,0,9,0.3);
+	}
+	.imgpr {
+	height: 600px;
+	margin: 30px 0 0 0;
+}
+.pnpr {
+	font-family: "Century Gothic" !important;
+	color: white;
+	margin: -17px 0 0 0 !important;
+	font-size: 24px;
+}
+.pppr {
+	font-family: "Century Gothic" !important;
+	color: white;
+	margin: -20px 0 0 10px !important;
+	font-size: 24px;
+}
+.pqpr {
+	font-family: "Century Gothic" !important;
+	color: white;
+	margin: -20px 0 0 10px !important;
+	font-size: 24px;
+}
+.ped, .pad {
+	font-family: "AmaticSC" !important;
+	text-align: center;
+	margin: -10px 0 15px 10px !important;
+	font-size: 26px !important;
+	/*color: white !important;*/
+}
+.pdel {
+	font-family: "AmaticSC" !important;
+	margin: -10px 0 15px 15px !important;
+	font-size: 26px !important;
+	/*color: white !important;*/
+}
+
+.pcr {
+	font-family: "AmaticSC" !important;
+	text-align: center;
+	font-size: 35px !important;
+	margin: 10px 0 20px 10px !important;
+}
+.pb {
+	text-align: center;
+	font-family: "Cranberry" !important;
+	text-align: center;
+	font-size: 35px !important;
+	/*height: 43px !important;*/
+}
+
+div.pr {
+	
+	background: linear-gradient(to right, #19050a, #0d050a 80% );
+	padding: 7px;
+	border-radius: 14px;
+	box-shadow: -5px 10px 10px rgba(0,0,0,0.5);
+	margin: 20px 15px 15px 15px;
+	
+}
+h3.nc {
+	font-family: "Cranberry";
+	color: #ab2a14;
+	font-size: 46px !important;
+	background: linear-gradient(to right, #19050a, #000000 80% );
+	padding: 10px 10px 10px 50px;
+	border-radius: 14px;
+	box-shadow: -5px 10px 10px rgba(0,0,0,0.5);
+	margin: 20px 0 0 30px;
+}
+img.sh2 {
+	margin: -10px 0 0 -86px;
+	position: absolute;
+}
+#productsget {
+	margin: 20px 15px 15px 5px;
+	padding: 10px;
+}
+p.pri, .pbp, .pnpr, .pppr, .pqpr {
+	text-align: center;
+}
+.ls {
+	text-align:right;
+}
+#hovloff:hover {
+	color: #d51b20;
+	text-decoration: none;
+	cursor: pointer;
+}
+#ed {
+	margin: 5px 7px 10px 15px !important;
+	font-family: "AmaticSC";
+}
+
+#del {
+	margin: 0 0 5px 0 !important;
+	font-family: "AmaticSC";
+}
+li.catalogadd {
+	color: #e98419;
+	font-family: "AmaticSC";
+	font-size: 26px;
+	margin: 0 7px -6px 7px !important;
+}
+li.catalogText, li.lg {
+	color: #e98419 !important;
+	font-family: "AmaticSC" !important;
+	font-size: 26px !important;
+	box-shadow: -15px 20px 14px rgba(0,0,0,0.5);
+	/*width: 400px !important;*/
+}
+
+ul.dropdown-menu {
+	/*width: 400px;*/
+	list-style-type: none;
+	position: relative;
+	background: linear-gradient(to right, #ffbd00, #977102 80% );
+	/*background: linear-gradient(to right, #2f090d, #0a050a );*/
+	box-shadow: -35px 45px 14px rgba(0,0,0,0.6);
+	background-color: #0a050a;
+	border: none;
+	width: 220px;
+}
+li a:hover{
+	color: #d51b20;
+	text-decoration: none;
+	cursor: pointer;
+}
+li a {
+	color: black;
+	list-style-type: none;
+	text-decoration: none;
+	font-family: "AmaticSC";
+	/*font-size: 28px;*/
+	margin: 0 0 0 10px;
+}
+a {
+	color: black !important;
+	list-style-type: none;
+	text-decoration: none;
+	font-family: "AmaticSC";
+	font-size: 28px !important;
+	margin: 0 0 0 10px !important;
+}
+	a:hover {
+		color: #d51b20 !important;
+		text-decoration: none;
+		cursor: pointer;
+	}
+.catalogText{
+	color: black !important;
+}
